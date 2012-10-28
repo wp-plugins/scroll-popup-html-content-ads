@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ad
 Plugin URI: http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ads-wordpress-plugin/
 Tags: scrolling, popup, plugin
 Requires at least: 3.0
-Tested up to: 3.4.1
-Stable tag: 4.0
+Tested up to: 3.4.2
+Stable tag: 5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -77,6 +77,10 @@ Slight change in the short code, Please find the new short code for your popup.
 
 New demo link, www.gopiplus.com
 
+= 5.0 =
+
+Tested up to: 3.4.2
+
 == Upgrade Notice ==
 
 = 1.0 =				
@@ -95,3 +99,7 @@ Slight change in the short code, Please find the new short code for your popup.
 = 4.0 =
 
 New demo link, www.gopiplus.com
+
+= 5.0 =
+
+Tested up to: 3.4.2

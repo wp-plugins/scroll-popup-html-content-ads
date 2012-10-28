@@ -1,3 +1,4 @@
+<br />
 <h2>Plugin configuration</h2>
 <ul>
 	<li>1. To load the popup into particular page, use the page short code. <a href="http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ads-wordpress-plugin/" target="_blank">Click here</a></li>
