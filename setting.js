@@ -1,11 +1,5 @@
 function _sphca_submit()
 {
-	//if(document.sphca_form.sphca_title.value=="")
-//	{
-//		alert("Please enter the popup window title.")
-//		document.sphca_form.sphca_title.focus();
-//		return false;
-//	}
 	if((document.sphca_form.sphca_width.value=="") || isNaN(document.sphca_form.sphca_width.value))
 	{
 		alert("Please enter window width, only number.")
