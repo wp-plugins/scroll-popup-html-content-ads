@@ -5,7 +5,7 @@ Plugin Name: Scroll popup html content ads
 Plugin URI: http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ads-wordpress-plugin/
 Description:  This wordpress plugin allows you to build and show a scrolling pop up using html divs. You can locate the scrolling pop up in a corner of a web page and choose the scrolling direction (i.e., left-to-right or top-down). and we have separate content management page to manage the popup content. using this plugin we can show our ads and special information to the user. for more help visit www.gopiplus.com
 Author: Gopi.R
-Version: 5.1
+Version: 6.0
 Author URI: http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ads-wordpress-plugin/
 Donate link: http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ads-wordpress-plugin/
 License: GPLv2 or later
@@ -14,6 +14,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 global $wpdb, $wp_version;
 define("wp_scroll_popup_html_content_ads_table", $wpdb->prefix . "scroll_popup_html_content_ads");
+define("sphca_UNIQUE_NAME", "scroll-popup-html-content-ads");
+define("sphca_TITLE", "Scroll popup html content ads");
+define('sphca_FAV', 'http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ads-wordpress-plugin/');
+define('sphca_LINK', 'Check official website for more information <a target="_blank" href="'.sphca_FAV.'">click here</a>');
 
 function sphca($scode=0)
 {
@@ -89,7 +93,39 @@ function scroll_popup_html_content_ads_show($scode=0)
 
 function scroll_popup_html_content_ads_activation()
 {
-	include_once("scroll-popup-activation.php");
+	global $wpdb;
+	if($wpdb->get_var("show tables like '". wp_scroll_popup_html_content_ads_table . "'") != wp_scroll_popup_html_content_ads_table) 
+	{
+		$wpdb->query("
+			CREATE TABLE IF NOT EXISTS `". wp_scroll_popup_html_content_ads_table . "` (
+			  `sphca_id` int(11) NOT NULL auto_increment,
+			  `sphca_text` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+			  `sphca_title` VARCHAR(1000) NOT NULL,
+			  `sphca_width` int(4) NOT NULL,
+			  `sphca_height` int(4) NOT NULL,
+			  `sphca_pos1` VARCHAR(15) NOT NULL,
+			  `sphca_pos2` VARCHAR(15) NOT NULL,
+			  `sphca_pos3` VARCHAR(15) NOT NULL,
+			  `sphca_date` datetime NOT NULL default '0000-00-00 00:00:00',
+			  PRIMARY KEY  (`sphca_id`) )
+			");
+		
+		$c1 = '<p align="left"><img style="margin: 5px;text-align:left;float:left;" title="Gopi" src="'.get_option('siteurl').'/wp-content/plugins/scroll-popup-html-content-ads/gopiplus.com-popup.png" alt="Gopi" />This is the demo for cool fade popup plugin. using this plugin you can add this cool popup window into your wordpress website. using this unblockable popup window  you can add your ads, special information, offers and announcements. Close this popup and read the article you can easily configure this plugin in your wordpress website. its very simple. please feel free to post you comments and feedback.</p>';
+		$t1 = 'Popup Title';
+		$c2 = '<a href="http://www.gopiplus.com/work/" target="_blank"><img src="'.get_option('siteurl').'/wp-content/plugins/scroll-popup-html-content-ads/gopiplus.jpg" border="0"  /></a>';
+		
+		$iIns = "INSERT INTO `". wp_scroll_popup_html_content_ads_table . "` (`sphca_text`, `sphca_title`, `sphca_width`, `sphca_height`, `sphca_pos1`, `sphca_pos2`, `sphca_pos3`)"; 
+		$sSql = $iIns . " VALUES ('$c1', '$t1', 250, 190, 'leftSide', 'topCorner', 'topDown');";
+		$wpdb->query($sSql);
+		$sSql = $iIns . " VALUES ('$c2', '$t1', 330, 270, 'rightSide', 'bottomCorner', 'bottopUp');";
+		$wpdb->query($sSql);
+	}
+	add_option('sphca_option', "showalways");
+	add_option('sphca_On_Homepage', "YES");
+	add_option('sphca_On_Posts', "YES");
+	add_option('sphca_On_Pages', "YES");
+	add_option('sphca_On_Archives', "NO");
+	add_option('sphca_On_Search', "NO");
 }
 
 function scroll_popup_html_content_ads_deactivate()
@@ -101,68 +137,29 @@ function scroll_popup_html_content_ads_add_to_menu()
 {
 	if (is_admin())
 	{
-		add_options_page('Scrolling Popup','Scrolling Popup','manage_options',__FILE__,'scroll_popup_html_content_ads_admin_options');  
-		add_options_page('Scrolling Popup', '', 'manage_options', "scroll-popup-html-content-ads/content-management.php",'' );
+		add_options_page('Scrolling Popup','Scrolling Popup','manage_options', 'scroll-popup-html-content-ads','scroll_popup_html_content_ads_admin_options');  
 	}
 }
 
 function scroll_popup_html_content_ads_admin_options()
 {
-	
-	echo '<div class="wrap">';
-	echo '<h2>Scrolling Popup</h2>';
-    
-	$sphca_On_Homepage = get_option('sphca_On_Homepage');
-	$sphca_On_Posts = get_option('sphca_On_Posts');
-	$sphca_On_Pages = get_option('sphca_On_Pages');
-	$sphca_On_Archives = get_option('sphca_On_Archives');
-	$sphca_On_Search = get_option('sphca_On_Search');
-	$sphca_option = get_option('sphca_option');
-	
-	if (@$_POST['sphca_submit']) 
+	global $wpdb;
+	$current_page = isset($_GET['ac']) ? $_GET['ac'] : '';
+	switch($current_page)
 	{
-		$sphca_On_Homepage = stripslashes(trim($_POST['sphca_On_Homepage']));
-		$sphca_On_Posts = stripslashes(trim($_POST['sphca_On_Posts']));
-		$sphca_On_Pages = stripslashes(trim($_POST['sphca_On_Pages']));
-		$sphca_On_Archives = stripslashes(trim($_POST['sphca_On_Archives']));
-		$sphca_On_Search = stripslashes(trim($_POST['sphca_On_Search']));
-		$sphca_option = stripslashes(trim($_POST['sphca_option']));
-		
-		update_option('sphca_On_Homepage', $sphca_On_Homepage );
-		update_option('sphca_On_Posts', $sphca_On_Posts );
-		update_option('sphca_On_Pages', $sphca_On_Pages );
-		update_option('sphca_On_Archives', $sphca_On_Archives );
-		update_option('sphca_On_Search', $sphca_On_Search );
-		update_option('sphca_option', $sphca_option );
+		case 'edit':
+			include('pages/content-edit.php');
+			break;
+		case 'add':
+			include('pages/content-add.php');
+			break;
+		case 'set':
+			include('pages/content-setting.php');
+			break;
+		default:
+			include('pages/content-show.php');
+			break;
 	}
-	
-	echo '<form name="sphca_form" method="post" action="">';
-	echo '<br>';
-	echo 'Display mode (Global setting):';
-	echo '<p><input  style="width: 200px;" maxlength="100" type="text" value="';
-	echo $sphca_option . '" name="sphca_option" id="sphca_option" /> (showalways/oncepersession)</p>';
-	echo '<br>';
-
-	echo 'Popup display setting (This is not applicable for short code):';
-	echo '<p>On Homepage:&nbsp;<input  style="width: 50px;" type="text" value="';
-	echo $sphca_On_Homepage . '" name="sphca_On_Homepage" id="sphca_On_Homepage" /> (YES/NO) ';
-	echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On Posts:&nbsp;&nbsp;&nbsp;<input  style="width: 50px;" type="text" value="';
-	echo $sphca_On_Posts . '" name="sphca_On_Posts" id="sphca_On_Posts" /> (YES/NO) </p>';
-	echo '<p>On Pages:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input  style="width: 50px;" type="text" value="';
-	echo $sphca_On_Pages . '" name="sphca_On_Pages" id="sphca_On_Pages" /> (YES/NO) ';
-	echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On Search:&nbsp;<input  style="width: 50px;" type="text" value="';
-	echo $sphca_On_Archives . '" name="sphca_On_Archives" id="sphca_On_Archives" /> (YES/NO) </p>';
-	echo '<p>On Archives:&nbsp;&nbsp;&nbsp;&nbsp;<input  style="width: 50px;" type="text" value="';
-	echo $sphca_On_Search . '" name="sphca_On_Search" id="sphca_On_Search" /> (YES/NO) </p>';
-	echo '<br>';	
-	echo '<input type="submit" id="sphca_submit" name="sphca_submit" lang="publish" class="button-primary" value="Update Setting" value="1" />';
-	include_once("button.php");
-	
-	echo '</form>';
-	
-	include_once("help.php");
-    
-	echo '</div>';  
 }
 
 function scroll_popup_html_content_shortcode( $atts ) 

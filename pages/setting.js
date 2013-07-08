@@ -1,4 +1,4 @@
-function _sphca_submit()
+function sphca_submit()
 {
 	if((document.sphca_form.sphca_width.value=="") || isNaN(document.sphca_form.sphca_width.value))
 	{
@@ -21,21 +21,21 @@ function _sphca_submit()
 	_sphca_escapeVal(document.sphca_form.sphca_text,'<br>');
 }
 
-function _sphca_delete(id)
+function sphca_delete(id)
 {
 	if(confirm("Do you want to delete this record?"))
 	{
-		document.sphca_display.action="options-general.php?page=scroll-popup-html-content-ads/content-management.php&AC=DEL&DID="+id;
-		document.sphca_display.submit();
+		document.frm_sphca_display.action="options-general.php?page=scroll-popup-html-content-ads&ac=del&did="+id;
+		document.frm_sphca_display.submit();
 	}
 }	
 
-function _sphca_redirect()
+function sphca_redirect()
 {
-	window.location = "options-general.php?page=scroll-popup-html-content-ads/content-management.php";
+	window.location = "options-general.php?page=scroll-popup-html-content-ads";
 }
 
-function _sphca_help()
+function sphca_help()
 {
 	window.open("http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ads-wordpress-plugin/");
 }
