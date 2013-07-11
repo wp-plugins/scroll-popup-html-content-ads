@@ -125,7 +125,7 @@ if ($sphca_error_found == FALSE && strlen($sphca_success) > 0)
       <h3>Update details</h3>
 	  
 		<label for="tag-title">Popup window title</label>
-		<input name="sphca_title" type="text" id="sphca_title" value="<?php echo $form['sphca_title']; ?>" size="70" maxlength="1000" /> 
+		<input name="sphca_title" type="text" id="sphca_title" value="<?php echo esc_html(stripslashes($form['sphca_title'])); ?>" size="70" maxlength="1000" /> 
 		<p>Enter your popup window title.</p>
 		
 		<label for="tag-title">Window width</label>
@@ -160,7 +160,7 @@ if ($sphca_error_found == FALSE && strlen($sphca_success) > 0)
 		<p>Select your scroll direction.</p>
 		
 		<label for="tag-title">Popup message</label>
-		<textarea name="sphca_text" id="sphca_text" cols="120" rows="10"><?php echo $form['sphca_text']; ?></textarea>
+		<textarea name="sphca_text" id="sphca_text" cols="120" rows="10"><?php echo esc_html(stripslashes($form['sphca_text'])); ?></textarea>
 		<p>Add your popup test here, your can add HTML content.</p>
 	  
       <input name="sphca_id" id="sphca_id" type="hidden" value="<?php echo $form['sphca_id']; ?>">

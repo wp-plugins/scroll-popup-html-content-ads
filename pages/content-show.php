@@ -90,8 +90,8 @@ if (isset($_POST['frm_sphca_display']) && $_POST['frm_sphca_display'] == 'yes')
 							<span class="trash"><a onClick="javascript:sphca_delete('<?php echo $data['sphca_id']; ?>')" href="javascript:void(0);">Delete</a></span> 
 						</div>
 						</td>
-						<td><?php echo $data['sphca_text']; ?></td>
-						<td><?php echo $data['sphca_title']; ?></td>
+						<td><?php echo stripslashes($data['sphca_text']); ?></td>
+						<td><?php echo stripslashes($data['sphca_title']); ?></td>
 					</tr>
 					<?php 
 					$i = $i+1; 
