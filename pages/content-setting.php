@@ -2,8 +2,8 @@
   <div class="form-wrap">
     <div id="icon-edit" class="icon32 icon32-posts-post"><br>
     </div>
-    <h2><?php echo sphca_TITLE; ?></h2>
-	<h3>Plugin setting</h3>
+    <h2><?php _e('Scroll popup html content ad', 'scroll-popup'); ?></h2>
+	<h3><?php _e('Plugin Setting', 'scroll-popup'); ?></h3>
     <?php
 	$sphca_On_Homepage = get_option('sphca_On_Homepage');
 	$sphca_On_Posts = get_option('sphca_On_Posts');
@@ -30,64 +30,67 @@
 		
 		?>
 		<div class="updated fade">
-			<p><strong>Details successfully updated.</strong></p>
+			<p><strong><?php _e('Details successfully updated.', 'scroll-popup'); ?></strong></p>
 		</div>
 		<?php
 	}
 	?>
-	<script language="JavaScript" src="<?php echo get_option('siteurl'); ?>/wp-content/plugins/scroll-popup-html-content-ads/pages/setting.js"></script>
+	<script language="JavaScript" src="<?php echo WP_sphca_PLUGIN_URL; ?>/pages/setting.js"></script>
 	<form name="sphca_form" method="post" action="">
 		
-		<label for="tag-title">Display mode (Global setting)</label>
+		<label for="tag-title"><?php _e('Display mode (Global setting)', 'scroll-popup'); ?></label>
 		<select name="sphca_option" id="sphca_option">
 			<option value='showalways' <?php if($sphca_option == 'showalways') { echo "selected='selected'" ; } ?>>Show always</option>
 			<option value='oncepersession' <?php if($sphca_option == 'oncepersession') { echo "selected='selected'" ; } ?>>Once per session</option>
 		</select>
-		<p>Display popup Always (or) Once per session</p>
+		<p><?php _e('Display popup Always (or) Once per session', 'scroll-popup'); ?></p>
 		
-		<label for="tag-title">Display on home page</label>
+		<label for="tag-title"><?php _e('Display on home page', 'scroll-popup'); ?></label>
 		<select name="sphca_On_Homepage" id="sphca_On_Homepage">
 			<option value='YES' <?php if($sphca_On_Homepage == 'YES') { echo "selected='selected'" ; } ?>>YES</option>
 			<option value='NO' <?php if($sphca_On_Homepage == 'NO') { echo "selected='selected'" ; } ?>>NO</option>
 		</select>
-		<p>This option is to display the popup on home page.</p>
+		<p><?php _e('This option is to display the popup on home page.', 'scroll-popup'); ?></p>
 		
-		<label for="tag-title">Display on wp posts</label>
+		<label for="tag-title"><?php _e('Display on wp posts', 'scroll-popup'); ?></label>
 		<select name="sphca_On_Posts" id="sphca_On_Posts">
 			<option value='YES' <?php if($sphca_On_Posts == 'YES') { echo "selected='selected'" ; } ?>>YES</option>
 			<option value='NO' <?php if($sphca_On_Posts == 'NO') { echo "selected='selected'" ; } ?>>NO</option>
 		</select>
-		<p>This option is to display the popup on wp posts</p>
+		<p><?php _e('This option is to display the popup on wp posts', 'scroll-popup'); ?></p>
 		
-		<label for="tag-title">Display on wp pages</label>
+		<label for="tag-title"><?php _e('Display on wp pages', 'scroll-popup'); ?></label>
 		<select name="sphca_On_Pages" id="sphca_On_Pages">
 			<option value='YES' <?php if($sphca_On_Pages == 'YES') { echo "selected='selected'" ; } ?>>YES</option>
 			<option value='NO' <?php if($sphca_On_Pages == 'NO') { echo "selected='selected'" ; } ?>>NO</option>
 		</select>
-		<p>This option is to display the popup on wp pages.</p>
+		<p><?php _e('This option is to display the popup on wp pages.', 'scroll-popup'); ?></p>
 		
-		<label for="tag-title">Display on wp archives</label>
+		<label for="tag-title"><?php _e('Display on wp archives', 'scroll-popup'); ?></label>
 		<select name="sphca_On_Archives" id="sphca_On_Archives">
 			<option value='YES' <?php if($sphca_On_Archives == 'YES') { echo "selected='selected'" ; } ?>>YES</option>
 			<option value='NO' <?php if($sphca_On_Archives == 'NO') { echo "selected='selected'" ; } ?>>NO</option>
 		</select>
-		<p>This option is to display the popup on wp archives pages.</p>
+		<p><?php _e('This option is to display the popup on wp archives pages.', 'scroll-popup'); ?></p>
 		
-		<label for="tag-title">Display on wp search</label>
+		<label for="tag-title"><?php _e('Display on wp search', 'scroll-popup'); ?></label>
 		<select name="sphca_On_Search" id="sphca_On_Search">
 			<option value='YES' <?php if($sphca_On_Search == 'YES') { echo "selected='selected'" ; } ?>>YES</option>
 			<option value='NO' <?php if($sphca_On_Search == 'NO') { echo "selected='selected'" ; } ?>>NO</option>
 		</select>
-		<p>This option is to display the popup on wp search pages.</p>
+		<p><?php _e('This option is to display the popup on wp search pages.', 'scroll-popup'); ?></p>
 		
 		<div style="height:5px;"></div>
 		<input type="hidden" name="sphca_form_submit" value="yes"/>
-		<input name="sphca_submit" id="sphca_submit" class="button add-new-h2" value="Submit" type="submit" />&nbsp;
-		<input name="publish" lang="publish" class="button add-new-h2" onclick="sphca_redirect()" value="Cancel" type="button" />&nbsp;
-		<input name="Help" lang="publish" class="button add-new-h2" onclick="sphca_help()" value="Help" type="button" />
+		<input name="sphca_submit" id="sphca_submit" class="button add-new-h2" value="<?php _e('Submit', 'scroll-popup'); ?>" type="submit" />&nbsp;
+		<input name="publish" lang="publish" class="button add-new-h2" onclick="sphca_redirect()" value="<?php _e('Cancel', 'scroll-popup'); ?>" type="button" />&nbsp;
+		<input name="Help" lang="publish" class="button add-new-h2" onclick="sphca_help()" value="<?php _e('Help', 'scroll-popup'); ?>" type="button" />
 		<div style="height:5px;"></div>
 		<?php wp_nonce_field('sphca_form_setting'); ?>
     </form>
 	 </div>
-  <p class="description"><?php echo sphca_LINK; ?></p>
+	<p class="description">
+		<?php _e('Check official website for more information', 'scroll-popup'); ?>
+		<a target="_blank" href="<?php echo sphca_FAV; ?>"><?php _e('click here', 'scroll-popup'); ?></a>
+	</p>
 </div>

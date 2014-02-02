@@ -13,7 +13,7 @@ $result = $wpdb->get_var($sSql);
 
 if ($result != '1')
 {
-	?><div class="error fade"><p><strong>Oops, selected details doesn't exist.</strong></p></div><?php
+	?><div class="error fade"><p><strong><?php _e('Oops, selected details doesnt exist', 'scroll-popup'); ?></strong></p></div><?php
 }
 else
 {
@@ -53,21 +53,21 @@ if (isset($_POST['sphca_form_submit']) && $_POST['sphca_form_submit'] == 'yes')
 	$form['sphca_text'] = isset($_POST['sphca_text']) ? $_POST['sphca_text'] : '';
 	if ($form['sphca_text'] == '')
 	{
-		$sphca_errors[] = __('Please enter the message.', sphca_UNIQUE_NAME);
+		$sphca_errors[] = __('Please enter the message.', 'scroll-popup');
 		$sphca_error_found = TRUE;
 	}
 	
 	$form['sphca_width'] = isset($_POST['sphca_width']) ? $_POST['sphca_width'] : '';
 	if ($form['sphca_width'] == '')
 	{
-		$sphca_errors[] = __('Please enter window width, only number.', sphca_UNIQUE_NAME);
+		$sphca_errors[] = __('Please enter window width, only number.', 'scroll-popup');
 		$sphca_error_found = TRUE;
 	}
 	
 	$form['sphca_height'] = isset($_POST['sphca_height']) ? $_POST['sphca_height'] : '';
 	if ($form['sphca_height'] == '')
 	{
-		$sphca_errors[] = __('Please enter window height, only number.', sphca_UNIQUE_NAME);
+		$sphca_errors[] = __('Please enter window height, only number.', 'scroll-popup');
 		$sphca_error_found = TRUE;
 	}
 	
@@ -95,7 +95,7 @@ if (isset($_POST['sphca_form_submit']) && $_POST['sphca_form_submit'] == 'yes')
 			);
 		$wpdb->query($sSql);
 		
-		$sphca_success = 'Details was successfully updated.';
+		$sphca_success = __('Details was successfully updated.', 'scroll-popup');
 	}
 }
 
@@ -111,67 +111,70 @@ if ($sphca_error_found == FALSE && strlen($sphca_success) > 0)
 {
 ?>
   <div class="updated fade">
-    <p><strong><?php echo $sphca_success; ?> <a href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=scroll-popup-html-content-ads">Click here</a> to view the details</strong></p>
+    <p><strong><?php echo $sphca_success; ?> <a href="<?php echo WP_sphca_ADMIN_URL; ?>"><?php _e('Click here to view the details', 'scroll-popup'); ?></a></strong></p>
   </div>
   <?php
 }
 ?>
-<script language="JavaScript" src="<?php echo get_option('siteurl'); ?>/wp-content/plugins/scroll-popup-html-content-ads/pages/setting.js"></script>
-<script language="JavaScript" src="<?php echo get_option('siteurl'); ?>/wp-content/plugins/scroll-popup-html-content-ads/pages/noenter.js"></script>
+<script language="JavaScript" src="<?php echo WP_sphca_PLUGIN_URL; ?>/pages/setting.js"></script>
+<script language="JavaScript" src="<?php echo WP_sphca_PLUGIN_URL; ?>/pages/noenter.js"></script>
 <div class="form-wrap">
 	<div id="icon-edit" class="icon32 icon32-posts-post"><br></div>
-	<h2><?php echo sphca_TITLE; ?></h2>
+	<h2><?php _e('Scroll popup html content ad', 'scroll-popup'); ?></h2>
 	<form name="sphca_form" method="post" action="#" onsubmit="return sphca_submit()"  >
-      <h3>Update details</h3>
+      <h3><?php _e('Update Details', 'scroll-popup'); ?></h3>
 	  
-		<label for="tag-title">Popup window title</label>
+		<label for="tag-title"><?php _e('Popup window title', 'scroll-popup'); ?></label>
 		<input name="sphca_title" type="text" id="sphca_title" value="<?php echo esc_html(stripslashes($form['sphca_title'])); ?>" size="70" maxlength="1000" /> 
-		<p>Enter your popup window title.</p>
+		<p><?php _e('Enter your popup window title.', 'scroll-popup'); ?></p>
 		
-		<label for="tag-title">Window width</label>
+		<label for="tag-title"><?php _e('Window width', 'scroll-popup'); ?></label>
 		<input name="sphca_width" type="text" id="sphca_width" value="<?php echo $form['sphca_width']; ?>" maxlength="4" />
-		<p>Enter your popup window width.</p>
+		<p><?php _e('Enter your popup window width.', 'scroll-popup'); ?></p>
 		
-		<label for="tag-title">Window height</label>
+		<label for="tag-title"><?php _e('Window height', 'scroll-popup'); ?></label>
 		<input name="sphca_height" type="text" id="sphca_height" value="<?php echo $form['sphca_height']; ?>" maxlength="4" />
-		<p>Enter your popup window height.</p>
+		<p><?php _e('Enter your popup window height.', 'scroll-popup'); ?></p>
 	  
-	  	<label for="tag-title">Window position 1</label>
+	  	<label for="tag-title"><?php _e('Window position 1', 'scroll-popup'); ?></label>
 		<select name="sphca_pos1" id="sphca_pos1">
             <option value='rightSide' <?php if($form['sphca_pos1'] == 'rightSide') { echo "selected='selected'" ; } ?>>Right Side</option>
             <option value='leftSide' <?php if($form['sphca_pos1'] == 'leftSide') { echo "selected='selected'" ; } ?>>Left Side</option>
           </select>
-		<p>Select your window position.</p>
+		<p><?php _e('Select your window position.', 'scroll-popup'); ?></p>
 		
-		<label for="tag-title">Window position 2</label>
+		<label for="tag-title"><?php _e('Window position 2', 'scroll-popup'); ?></label>
 		<select name="sphca_pos2" id="sphca_pos2">
             <option value='bottomCorner' <?php if($form['sphca_pos2'] == 'bottomCorner') { echo "selected='selected'" ; } ?>>Bottom Corner</option>
             <option value='topCorner' <?php if($form['sphca_pos2'] == 'topCorner') { echo "selected='selected'" ; } ?>>Top Corner</option>
           </select>
-		<p>Select your window position.</p>
+		<p><?php _e('Select your window position.', 'scroll-popup'); ?></p>
 		
-		<label for="tag-title">Scroll direction</label>
+		<label for="tag-title"><?php _e('Scroll direction', 'scroll-popup'); ?></label>
 		<select name="sphca_pos3" id="sphca_pos3">
             <option value='rightLeft' <?php if($form['sphca_pos3'] == 'rightLeft') { echo "selected='selected'" ; } ?>>Right Left</option>
             <option value='bottopUp' <?php if($form['sphca_pos3'] == 'bottopUp') { echo "selected='selected'" ; } ?>>Bottom Up</option>
 			<option value='topDown' <?php if($form['sphca_pos3'] == 'topDown') { echo "selected='selected'" ; } ?>>Top Down</option>
 			<option value='leftRight' <?php if($form['sphca_pos3'] == 'leftRight') { echo "selected='selected'" ; } ?>>Left Right</option>
           </select>
-		<p>Select your scroll direction.</p>
+		<p><?php _e('Select your scroll direction.', 'scroll-popup'); ?></p>
 		
-		<label for="tag-title">Popup message</label>
+		<label for="tag-title"><?php _e('Popup message', 'scroll-popup'); ?></label>
 		<textarea name="sphca_text" id="sphca_text" cols="120" rows="10"><?php echo esc_html(stripslashes($form['sphca_text'])); ?></textarea>
-		<p>Add your popup test here, your can add HTML content.</p>
+		<p><?php _e('Add your popup test here, your can add HTML content.', 'scroll-popup'); ?></p>
 	  
       <input name="sphca_id" id="sphca_id" type="hidden" value="<?php echo $form['sphca_id']; ?>">
       <input type="hidden" name="sphca_form_submit" value="yes"/>
       <p class="submit">
-        <input name="publish" lang="publish" class="button add-new-h2" value="Update Details" type="submit" />&nbsp;
-        <input name="publish" lang="publish" class="button add-new-h2" onclick="sphca_redirect()" value="Cancel" type="button" />&nbsp;
-        <input name="Help" lang="publish" class="button add-new-h2" onclick="sphca_help()" value="Help" type="button" />
+        <input name="publish" lang="publish" class="button add-new-h2" value="<?php _e('Update Details', 'scroll-popup'); ?>" type="submit" />&nbsp;
+        <input name="publish" lang="publish" class="button add-new-h2" onclick="sphca_redirect()" value="<?php _e('Cancel', 'scroll-popup'); ?>" type="button" />&nbsp;
+        <input name="Help" lang="publish" class="button add-new-h2" onclick="sphca_help()" value="<?php _e('Help', 'scroll-popup'); ?>" type="button" />
       </p>
 	  <?php wp_nonce_field('sphca_form_edit'); ?>
     </form>
 </div>
-<p class="description"><?php echo sphca_LINK; ?></p>
+<p class="description">
+	<?php _e('Check official website for more information', 'scroll-popup'); ?>
+	<a target="_blank" href="<?php echo sphca_FAV; ?>"><?php _e('click here', 'scroll-popup'); ?></a>
+</p>
 </div>

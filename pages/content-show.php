@@ -18,7 +18,7 @@ if (isset($_POST['frm_sphca_display']) && $_POST['frm_sphca_display'] == 'yes')
 	
 	if ($result != '1')
 	{
-		?><div class="error fade"><p><strong>Oops, selected details doesn't exist (1).</strong></p></div><?php
+		?><div class="error fade"><p><strong><?php _e('Oops, selected details doesnt exist', 'scroll-popup'); ?></strong></p></div><?php
 	}
 	else
 	{
@@ -36,7 +36,7 @@ if (isset($_POST['frm_sphca_display']) && $_POST['frm_sphca_display'] == 'yes')
 			
 			//	Set success message
 			$sphca_success_msg = TRUE;
-			$sphca_success = __('Selected record was successfully deleted.', sphca_UNIQUE_NAME);
+			$sphca_success = __('Selected record was successfully deleted.', 'scroll-popup');
 		}
 	}
 	
@@ -48,30 +48,31 @@ if (isset($_POST['frm_sphca_display']) && $_POST['frm_sphca_display'] == 'yes')
 ?>
 <div class="wrap">
   <div id="icon-edit" class="icon32 icon32-posts-post"></div>
-    <h2><?php echo sphca_TITLE; ?><a class="add-new-h2" href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=scroll-popup-html-content-ads&amp;ac=add">Add New</a></h2>
+    <h2><?php _e('Scroll popup html content ad', 'scroll-popup'); ?>
+	<a class="add-new-h2" href="<?php echo WP_sphca_ADMIN_URL; ?>&amp;ac=add"><?php _e('Add New', 'scroll-popup'); ?></a></h2>
     <div class="tool-box">
 	<?php
 		$sSql = "SELECT * FROM `".wp_scroll_popup_html_content_ads_table."` order by sphca_id desc";
 		$myData = array();
 		$myData = $wpdb->get_results($sSql, ARRAY_A);
 		?>
-		<script language="JavaScript" src="<?php echo get_option('siteurl'); ?>/wp-content/plugins/scroll-popup-html-content-ads/pages/setting.js"></script>
+		<script language="JavaScript" src="<?php echo WP_sphca_PLUGIN_URL; ?>/pages/setting.js"></script>
 		<form name="frm_sphca_display" method="post">
       <table width="100%" class="widefat" id="straymanage">
         <thead>
           <tr>
             <th class="check-column" scope="col" style="width:15px;"><input type="checkbox" name="sphca_group_item[]" /></th>
-			<th scope="col" style="width:150px;">Short code</th>
-			<th scope="col">Popup content</th>
-            <th scope="col" style="width:200px;">Popup window title</th>
+			<th scope="col" style="width:180px;"><?php _e('Short code', 'scroll-popup'); ?></th>
+			<th scope="col"><?php _e('Popup content', 'scroll-popup'); ?></th>
+            <th scope="col" style="width:200px;"><?php _e('Popup window title', 'scroll-popup'); ?></th>
           </tr>
         </thead>
 		<tfoot>
           <tr>
             <th class="check-column" scope="col" style="height:15px;"><input type="checkbox" name="sphca_group_item[]" /></th>
-			<th scope="col" style="width:150px;">Short code</th>
-			<th scope="col">Popup content</th>
-            <th scope="col" style="width:200px;">Popup window title</th>
+			<th scope="col" style="width:180px;"><?php _e('Short code', 'scroll-popup'); ?></th>
+			<th scope="col"><?php _e('Popup content', 'scroll-popup'); ?></th>
+            <th scope="col" style="width:200px;"><?php _e('Popup window title', 'scroll-popup'); ?></th>
           </tr>
         </tfoot>
 		<tbody>
@@ -83,11 +84,11 @@ if (isset($_POST['frm_sphca_display']) && $_POST['frm_sphca_display'] == 'yes')
 				{
 					?>
 					<tr class="<?php if ($i&1) { echo'alternate'; } else { echo ''; }?>">
-						<td align="left"><input type="checkbox" value="<?php echo $data['sphca_id']; ?>" name="sphca_group_item[]"></th>
+						<td align="left"><input type="checkbox" value="<?php echo $data['sphca_id']; ?>" name="sphca_group_item[]"></td>
 						<td>[scroll-popup-html id="<?php echo $data['sphca_id']; ?>"]
 						<div class="row-actions">
-							<span class="edit"><a title="Edit" href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=scroll-popup-html-content-ads&amp;ac=edit&amp;did=<?php echo $data['sphca_id']; ?>">Edit</a> | </span>
-							<span class="trash"><a onClick="javascript:sphca_delete('<?php echo $data['sphca_id']; ?>')" href="javascript:void(0);">Delete</a></span> 
+						<span class="edit"><a title="Edit" href="<?php echo WP_sphca_ADMIN_URL; ?>&amp;ac=edit&amp;did=<?php echo $data['sphca_id']; ?>"><?php _e('Edit', 'scroll-popup'); ?></a> | </span>
+						<span class="trash"><a onClick="javascript:sphca_delete('<?php echo $data['sphca_id']; ?>')" href="javascript:void(0);"><?php _e('Delete', 'scroll-popup'); ?></a></span> 
 						</div>
 						</td>
 						<td><?php echo stripslashes($data['sphca_text']); ?></td>
@@ -99,7 +100,7 @@ if (isset($_POST['frm_sphca_display']) && $_POST['frm_sphca_display'] == 'yes')
 			}
 			else
 			{
-				?><tr><td colspan="4" align="center">No records available.</td></tr><?php 
+				?><tr><td colspan="4" align="center"><?php _e('No records available.', 'scroll-popup'); ?></td></tr><?php 
 			}
 			?>
 		</tbody>
@@ -109,17 +110,20 @@ if (isset($_POST['frm_sphca_display']) && $_POST['frm_sphca_display'] == 'yes')
       </form>	
 	  <div class="tablenav">
 	  <h2>
-	  <a class="button add-new-h2" href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=scroll-popup-html-content-ads&amp;ac=add">Add New</a>
-	  <a class="button add-new-h2" href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=scroll-popup-html-content-ads&amp;ac=set">Plugin setting</a>
-	  <a class="button add-new-h2" target="_blank" href="<?php echo sphca_FAV; ?>">Help</a>
+	  <a class="button add-new-h2" href="<?php echo WP_sphca_ADMIN_URL; ?>&amp;ac=add"><?php _e('Add New', 'scroll-popup'); ?></a>
+	  <a class="button add-new-h2" href="<?php echo WP_sphca_ADMIN_URL; ?>&amp;ac=set"><?php _e('Plugin Setting', 'scroll-popup'); ?></a>
+	  <a class="button add-new-h2" target="_blank" href="<?php echo sphca_FAV; ?>"><?php _e('Help', 'scroll-popup'); ?></a>
 	  </h2>
 	  </div>
 	  <div style="height:5px"></div>
-	<h3>Plugin configuration option</h3>
+	<h3><?php _e('Plugin configuration option', 'scroll-popup'); ?></h3>
 	<ol>
-		<li>Add the plugin in the posts or pages using short code.</li>
-		<li>Add directly in to the theme using PHP code.</li>
+		<li><?php _e('Add the plugin in the posts or pages using short code.', 'scroll-popup'); ?></li>
+		<li><?php _e('Add directly in to the theme using PHP code.', 'scroll-popup'); ?></li>
 	</ol>
-	<p class="description"><?php echo sphca_LINK; ?></p>
+	<p class="description">
+		<?php _e('Check official website for more information', 'scroll-popup'); ?>
+		<a target="_blank" href="<?php echo sphca_FAV; ?>"><?php _e('click here', 'scroll-popup'); ?></a>
+	</p>
 	</div>
 </div>
