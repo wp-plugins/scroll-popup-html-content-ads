@@ -3,13 +3,15 @@
 Plugin Name: Scroll popup html content ads
 Plugin URI: http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ads-wordpress-plugin/
 Description:  This wordpress plugin allows you to build and show a scrolling pop up using html divs. You can locate the scrolling pop up in a corner of a web page and choose the scrolling direction (i.e., left-to-right or top-down). and we have separate content management page to manage the popup content. using this plugin we can show our ads and special information to the user. for more help visit www.gopiplus.com
-Author: Gopi.R
-Version: 6.1
+Author: Gopi Ramasamy
+Version: 6.2
 Author URI: http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ads-wordpress-plugin/
 Donate link: http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ads-wordpress-plugin/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
+
+if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) { die('You are not allowed to call this page directly.'); }
 
 global $wpdb, $wp_version;
 define("wp_scroll_popup_html_content_ads_table", $wpdb->prefix . "scroll_popup_html_content_ads");
@@ -125,7 +127,7 @@ function scroll_popup_html_content_ads_activation()
 		$iIns = "INSERT INTO `". wp_scroll_popup_html_content_ads_table . "` (`sphca_text`, `sphca_title`, `sphca_width`, `sphca_height`, `sphca_pos1`, `sphca_pos2`, `sphca_pos3`)"; 
 		$sSql = $iIns . " VALUES ('$c1', '$t1', 250, 190, 'leftSide', 'topCorner', 'topDown');";
 		$wpdb->query($sSql);
-		$sSql = $iIns . " VALUES ('$c2', '$t1', 330, 270, 'rightSide', 'bottomCorner', 'bottopUp');";
+		$sSql = $iIns . " VALUES ('$c2', '$t1', 330, 270, 'rightSide', 'topCorner', 'topDown');";
 		$wpdb->query($sSql);
 	}
 	add_option('sphca_option', "showalways");

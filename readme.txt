@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ad
 Plugin URI: http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ads-wordpress-plugin/
 Tags: scrolling, popup, plugin
 Requires at least: 3.2
-Tested up to: 3.8
-Stable tag: 6.1
+Tested up to: 3.9
+Stable tag: 6.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -99,6 +99,11 @@ New admin layout.
 2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
 Plugin *.po file (scroll-popup.po) available in the languages folder.
 
+= 6.2 =
+
+1. Tested up to 3.9
+2. Added little security feature.
+
 == Upgrade Notice ==
 
 = 1.0 =				
@@ -137,3 +142,8 @@ New admin layout.
 1. Tested up to 3.8
 2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
 Plugin *.po file (scroll-popup.po) available in the languages folder.
+
+= 6.2 =
+
+1. Tested up to 3.9
+2. Added little security feature.
