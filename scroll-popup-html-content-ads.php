@@ -4,7 +4,7 @@ Plugin Name: Scroll popup html content ads
 Plugin URI: http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ads-wordpress-plugin/
 Description:  This wordpress plugin allows you to build and show a scrolling pop up using html divs. You can locate the scrolling pop up in a corner of a web page and choose the scrolling direction (i.e., left-to-right or top-down). and we have separate content management page to manage the popup content. using this plugin we can show our ads and special information to the user. for more help visit www.gopiplus.com
 Author: Gopi Ramasamy
-Version: 6.2
+Version: 6.3
 Author URI: http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ads-wordpress-plugin/
 Donate link: http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ads-wordpress-plugin/
 License: GPLv2 or later
@@ -50,6 +50,7 @@ function scroll_popup_html_content_ads_show($scode=0)
 	global $wpdb;
 	
 	$sSql = "select * from ".wp_scroll_popup_html_content_ads_table." where 1=1";
+	$sSql = $sSql . " and ( sphca_date >= NOW() or sphca_date = '0000-00-00 00:00:00' )";
 	
 	if(!is_numeric($scode)) { $scode = 0 ;}
 	
@@ -186,6 +187,7 @@ function scroll_popup_html_content_shortcode( $atts )
 	$id = $atts['id'];
 		
 	$sSql = "select * from ".wp_scroll_popup_html_content_ads_table." where 1=1";
+	$sSql = $sSql . " and ( sphca_date >= NOW() or sphca_date = '0000-00-00 00:00:00' )";
 	
 	if(!is_numeric($scode)) { $scode = 0 ;}
 	
@@ -236,7 +238,7 @@ function scroll_popup_html_content_shortcode( $atts )
 	}
 	else
 	{
-		$sphca = "No record found.";
+		//$sphca = "No record found.";
 	}
 
 	return $sphca;

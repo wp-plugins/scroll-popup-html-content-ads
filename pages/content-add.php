@@ -14,6 +14,7 @@ $form = array(
 	'sphca_pos1' => '',
 	'sphca_pos2' => '',
 	'sphca_pos3' => '',
+	'sphca_date' => '',
 	'sphca_id' => ''
 );
 
@@ -48,15 +49,17 @@ if (isset($_POST['sphca_form_submit']) && $_POST['sphca_form_submit'] == 'yes')
 	$form['sphca_pos1'] = isset($_POST['sphca_pos1']) ? $_POST['sphca_pos1'] : '';
 	$form['sphca_pos2'] = isset($_POST['sphca_pos2']) ? $_POST['sphca_pos2'] : '';
 	$form['sphca_pos3'] = isset($_POST['sphca_pos3']) ? $_POST['sphca_pos3'] : '';
+	$form['sphca_date'] = isset($_POST['sphca_date']) ? $_POST['sphca_date'] : '';
 
 	//	No errors found, we can add this Group to the table
 	if ($sphca_error_found == FALSE)
 	{
 		$sql = $wpdb->prepare(
 			"INSERT INTO `".wp_scroll_popup_html_content_ads_table."`
-			(`sphca_text`, `sphca_title`, `sphca_width`, `sphca_height`, `sphca_pos1`, `sphca_pos2`, `sphca_pos3`)
-			VALUES(%s, %s, %s, %s, %s, %s, %s)",
-			array($form['sphca_text'], $form['sphca_title'], $form['sphca_width'], $form['sphca_height'], $form['sphca_pos1'], $form['sphca_pos2'], $form['sphca_pos3'])
+			(`sphca_text`, `sphca_title`, `sphca_width`, `sphca_height`, `sphca_pos1`, `sphca_pos2`, `sphca_pos3`, `sphca_date`)
+			VALUES(%s, %s, %s, %s, %s, %s, %s, %s)",
+			array($form['sphca_text'], $form['sphca_title'], $form['sphca_width'], $form['sphca_height'], 
+			$form['sphca_pos1'], $form['sphca_pos2'], $form['sphca_pos3'], $form['sphca_date'])
 		);
 		$wpdb->query($sql);
 		
@@ -71,6 +74,7 @@ if (isset($_POST['sphca_form_submit']) && $_POST['sphca_form_submit'] == 'yes')
 			'sphca_pos1' => '',
 			'sphca_pos2' => '',
 			'sphca_pos3' => '',
+			'sphca_date' => '',
 			'sphca_id' => ''
 		);
 	}
@@ -139,6 +143,10 @@ if ($sphca_error_found == FALSE && strlen($sphca_success) > 0)
 		<label for="tag-title"><?php _e('Popup message', 'scroll-popup'); ?></label>
 		<textarea name="sphca_text" id="sphca_text" cols="120" rows="10"></textarea>
 		<p><?php _e('Add your popup test here, your can add HTML content.', 'scroll-popup'); ?></p>
+		
+		<label for="tag-title"><?php _e('Expiration date', 'scroll-popup'); ?></label>
+		<input name="sphca_date" type="text" id="sphca_date" value="9999-12-31" maxlength="10" />
+		<p><?php _e('Please enter the expiration date in this format YYYY-MM-DD <br /> 9999-12-31 : Is equal to no expire.', 'scroll-popup'); ?></p>
 	  
       <input name="sphca_id" id="sphca_id" type="hidden" value="">
       <input type="hidden" name="sphca_form_submit" value="yes"/>

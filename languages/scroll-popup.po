@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Scroll popup html content ads\n"
-"POT-Creation-Date: 2014-04-19 00:40+0800\n"
-"PO-Revision-Date: 2014-04-19 00:40+0800\n"
+"POT-Creation-Date: 2014-07-19 12:23+0800\n"
+"PO-Revision-Date: 2014-07-19 12:23+0800\n"
 "Last-Translator: \n"
 "Language-Team: www.gopiplus.com <www.gopiplus.com>\n"
 "MIME-Version: 1.0\n"
@@ -13,114 +13,123 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../scroll-popup-html-content-ads.php:150
+#: ../scroll-popup-html-content-ads.php:151
 msgid "Scrolling Popup"
 msgstr ""
 
-#: ../pages/content-add.php:29 ../pages/content-edit.php:57
+#: ../pages/content-add.php:30 ../pages/content-edit.php:58
 msgid "Please enter the message."
 msgstr ""
 
-#: ../pages/content-add.php:36 ../pages/content-edit.php:64
+#: ../pages/content-add.php:37 ../pages/content-edit.php:65
 msgid "Please enter window width, only number."
 msgstr ""
 
-#: ../pages/content-add.php:43 ../pages/content-edit.php:71
+#: ../pages/content-add.php:44 ../pages/content-edit.php:72
 msgid "Please enter window height, only number."
 msgstr ""
 
-#: ../pages/content-add.php:63
+#: ../pages/content-add.php:66
 msgid "New details was successfully added."
 msgstr ""
 
-#: ../pages/content-add.php:91 ../pages/content-edit.php:115
+#: ../pages/content-add.php:95 ../pages/content-edit.php:119
 msgid "Click here to view the details"
 msgstr ""
 
-#: ../pages/content-add.php:100 ../pages/content-edit.php:124
+#: ../pages/content-add.php:104 ../pages/content-edit.php:128
 #: ../pages/content-setting.php:6 ../pages/content-show.php:52
 msgid "Scroll popup html content ad"
 msgstr ""
 
-#: ../pages/content-add.php:102
+#: ../pages/content-add.php:106
 msgid "Add Details"
 msgstr ""
 
-#: ../pages/content-add.php:104 ../pages/content-edit.php:128
-#: ../pages/content-show.php:68 ../pages/content-show.php:76
+#: ../pages/content-add.php:108 ../pages/content-edit.php:132
 msgid "Popup window title"
 msgstr ""
 
-#: ../pages/content-add.php:106 ../pages/content-edit.php:130
+#: ../pages/content-add.php:110 ../pages/content-edit.php:134
 msgid "Enter your popup window title."
 msgstr ""
 
-#: ../pages/content-add.php:108 ../pages/content-edit.php:132
+#: ../pages/content-add.php:112 ../pages/content-edit.php:136
 msgid "Window width"
 msgstr ""
 
-#: ../pages/content-add.php:110 ../pages/content-edit.php:134
+#: ../pages/content-add.php:114 ../pages/content-edit.php:138
 msgid "Enter your popup window width."
 msgstr ""
 
-#: ../pages/content-add.php:112 ../pages/content-edit.php:136
+#: ../pages/content-add.php:116 ../pages/content-edit.php:140
 msgid "Window height"
 msgstr ""
 
-#: ../pages/content-add.php:114 ../pages/content-edit.php:138
+#: ../pages/content-add.php:118 ../pages/content-edit.php:142
 msgid "Enter your popup window height."
 msgstr ""
 
-#: ../pages/content-add.php:116 ../pages/content-edit.php:140
+#: ../pages/content-add.php:120 ../pages/content-edit.php:144
 msgid "Window position 1"
 msgstr ""
 
-#: ../pages/content-add.php:121 ../pages/content-add.php:128
-#: ../pages/content-edit.php:145 ../pages/content-edit.php:152
+#: ../pages/content-add.php:125 ../pages/content-add.php:132
+#: ../pages/content-edit.php:149 ../pages/content-edit.php:156
 msgid "Select your window position."
 msgstr ""
 
-#: ../pages/content-add.php:123 ../pages/content-edit.php:147
+#: ../pages/content-add.php:127 ../pages/content-edit.php:151
 msgid "Window position 2"
 msgstr ""
 
-#: ../pages/content-add.php:130 ../pages/content-edit.php:154
+#: ../pages/content-add.php:134 ../pages/content-edit.php:158
 msgid "Scroll direction"
 msgstr ""
 
-#: ../pages/content-add.php:137 ../pages/content-edit.php:161
+#: ../pages/content-add.php:141 ../pages/content-edit.php:165
 msgid "Select your scroll direction."
 msgstr ""
 
-#: ../pages/content-add.php:139 ../pages/content-edit.php:163
+#: ../pages/content-add.php:143 ../pages/content-edit.php:167
 msgid "Popup message"
 msgstr ""
 
-#: ../pages/content-add.php:141 ../pages/content-edit.php:165
+#: ../pages/content-add.php:145 ../pages/content-edit.php:169
 msgid "Add your popup test here, your can add HTML content."
 msgstr ""
 
-#: ../pages/content-add.php:146
+#: ../pages/content-add.php:147 ../pages/content-edit.php:171
+msgid "Expiration date"
+msgstr ""
+
+#: ../pages/content-add.php:149 ../pages/content-edit.php:173
+msgid ""
+"Please enter the expiration date in this format YYYY-MM-DD <br /> "
+"9999-12-31 : Is equal to no expire."
+msgstr ""
+
+#: ../pages/content-add.php:154
 msgid "Insert Details"
 msgstr ""
 
-#: ../pages/content-add.php:147 ../pages/content-edit.php:171
+#: ../pages/content-add.php:155 ../pages/content-edit.php:179
 #: ../pages/content-setting.php:87
 msgid "Cancel"
 msgstr ""
 
-#: ../pages/content-add.php:148 ../pages/content-edit.php:172
-#: ../pages/content-setting.php:88 ../pages/content-show.php:116
+#: ../pages/content-add.php:156 ../pages/content-edit.php:180
+#: ../pages/content-setting.php:88 ../pages/content-show.php:119
 msgid "Help"
 msgstr ""
 
-#: ../pages/content-add.php:154 ../pages/content-edit.php:178
-#: ../pages/content-setting.php:94 ../pages/content-show.php:126
+#: ../pages/content-add.php:162 ../pages/content-edit.php:186
+#: ../pages/content-setting.php:94 ../pages/content-show.php:129
 msgid "Check official website for more information"
 msgstr ""
 
-#: ../pages/content-add.php:155 ../pages/content-edit.php:179
-#: ../pages/content-setting.php:95 ../pages/content-show.php:127
+#: ../pages/content-add.php:163 ../pages/content-edit.php:187
+#: ../pages/content-setting.php:95 ../pages/content-show.php:130
 msgid "click here"
 msgstr ""
 
@@ -128,15 +137,15 @@ msgstr ""
 msgid "Oops, selected details doesnt exist"
 msgstr ""
 
-#: ../pages/content-edit.php:99
+#: ../pages/content-edit.php:103
 msgid "Details was successfully updated."
 msgstr ""
 
-#: ../pages/content-edit.php:126 ../pages/content-edit.php:170
+#: ../pages/content-edit.php:130 ../pages/content-edit.php:178
 msgid "Update Details"
 msgstr ""
 
-#: ../pages/content-setting.php:7 ../pages/content-show.php:115
+#: ../pages/content-setting.php:7 ../pages/content-show.php:118
 msgid "Plugin Setting"
 msgstr ""
 
@@ -200,38 +209,46 @@ msgstr ""
 msgid "Selected record was successfully deleted."
 msgstr ""
 
-#: ../pages/content-show.php:53 ../pages/content-show.php:114
+#: ../pages/content-show.php:53 ../pages/content-show.php:117
 msgid "Add New"
 msgstr ""
 
-#: ../pages/content-show.php:66 ../pages/content-show.php:74
+#: ../pages/content-show.php:66 ../pages/content-show.php:75
 msgid "Short code"
 msgstr ""
 
-#: ../pages/content-show.php:67 ../pages/content-show.php:75
-msgid "Popup content"
+#: ../pages/content-show.php:67 ../pages/content-show.php:76
+msgid "Content"
 msgstr ""
 
-#: ../pages/content-show.php:91
+#: ../pages/content-show.php:68 ../pages/content-show.php:77
+msgid "Title"
+msgstr ""
+
+#: ../pages/content-show.php:69 ../pages/content-show.php:78
+msgid "Expiration"
+msgstr ""
+
+#: ../pages/content-show.php:93
 msgid "Edit"
 msgstr ""
 
-#: ../pages/content-show.php:92
+#: ../pages/content-show.php:94
 msgid "Delete"
 msgstr ""
 
-#: ../pages/content-show.php:104
+#: ../pages/content-show.php:107
 msgid "No records available."
 msgstr ""
 
-#: ../pages/content-show.php:120
+#: ../pages/content-show.php:123
 msgid "Plugin configuration option"
 msgstr ""
 
-#: ../pages/content-show.php:122
+#: ../pages/content-show.php:125
 msgid "Add the plugin in the posts or pages using short code."
 msgstr ""
 
-#: ../pages/content-show.php:123
+#: ../pages/content-show.php:126
 msgid "Add directly in to the theme using PHP code."
 msgstr ""

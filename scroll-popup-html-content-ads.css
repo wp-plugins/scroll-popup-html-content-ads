@@ -9,7 +9,6 @@ div.postit
 	position:absolute; 
 	z-index:9999;  
 }
-
 div.title
 {
 	cursor:default; 
@@ -23,7 +22,6 @@ div.title
 	text-decoration:none;
 	background:#FFFFFF; 
 }
-
 div.content
 {
 	display:block; 
@@ -40,7 +38,6 @@ div.content
 	top:20px; 
 	background:#FFFFFF; 
 }
-
 span.spantitle
 {
 	position:absolute; 

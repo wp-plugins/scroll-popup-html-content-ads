@@ -42,6 +42,7 @@ else
 		'sphca_pos1' => $data['sphca_pos1'],
 		'sphca_pos2' => $data['sphca_pos2'],
 		'sphca_pos3' => $data['sphca_pos3'],
+		'sphca_date' => $data['sphca_date'],
 		'sphca_id' => $data['sphca_id']
 	);
 }
@@ -76,6 +77,7 @@ if (isset($_POST['sphca_form_submit']) && $_POST['sphca_form_submit'] == 'yes')
 	$form['sphca_pos1'] = isset($_POST['sphca_pos1']) ? $_POST['sphca_pos1'] : '';
 	$form['sphca_pos2'] = isset($_POST['sphca_pos2']) ? $_POST['sphca_pos2'] : '';
 	$form['sphca_pos3'] = isset($_POST['sphca_pos3']) ? $_POST['sphca_pos3'] : '';
+	$form['sphca_date'] = isset($_POST['sphca_date']) ? $_POST['sphca_date'] : '';
 
 
 	//	No errors found, we can add this Group to the table
@@ -89,10 +91,12 @@ if (isset($_POST['sphca_form_submit']) && $_POST['sphca_form_submit'] == 'yes')
 				`sphca_height` = %s,
 				`sphca_pos1` = %s,
 				`sphca_pos2` = %s,
-				`sphca_pos3` = %s
+				`sphca_pos3` = %s,
+				`sphca_date` = %s
 				WHERE sphca_id = %d
 				LIMIT 1",
-				array($form['sphca_text'], $form['sphca_title'], $form['sphca_width'], $form['sphca_height'], $form['sphca_pos1'], $form['sphca_pos2'], $form['sphca_pos3'], $did)
+				array($form['sphca_text'], $form['sphca_title'], $form['sphca_width'], $form['sphca_height'], 
+				$form['sphca_pos1'], $form['sphca_pos2'], $form['sphca_pos3'], $form['sphca_date'], $did)
 			);
 		$wpdb->query($sSql);
 		
@@ -102,19 +106,19 @@ if (isset($_POST['sphca_form_submit']) && $_POST['sphca_form_submit'] == 'yes')
 
 if ($sphca_error_found == TRUE && isset($sphca_errors[0]) == TRUE)
 {
-?>
-  <div class="error fade">
-    <p><strong><?php echo $sphca_errors[0]; ?></strong></p>
-  </div>
-  <?php
+	?>
+	<div class="error fade">
+		<p><strong><?php echo $sphca_errors[0]; ?></strong></p>
+	</div>
+	<?php
 }
 if ($sphca_error_found == FALSE && strlen($sphca_success) > 0)
 {
-?>
-  <div class="updated fade">
-    <p><strong><?php echo $sphca_success; ?> <a href="<?php echo WP_sphca_ADMIN_URL; ?>"><?php _e('Click here to view the details', 'scroll-popup'); ?></a></strong></p>
-  </div>
-  <?php
+	?>
+	<div class="updated fade">
+		<p><strong><?php echo $sphca_success; ?> <a href="<?php echo WP_sphca_ADMIN_URL; ?>"><?php _e('Click here to view the details', 'scroll-popup'); ?></a></strong></p>
+	</div>
+	<?php
 }
 ?>
 <script language="JavaScript" src="<?php echo WP_sphca_PLUGIN_URL; ?>/pages/setting.js"></script>
@@ -163,6 +167,10 @@ if ($sphca_error_found == FALSE && strlen($sphca_success) > 0)
 		<label for="tag-title"><?php _e('Popup message', 'scroll-popup'); ?></label>
 		<textarea name="sphca_text" id="sphca_text" cols="120" rows="10"><?php echo esc_html(stripslashes($form['sphca_text'])); ?></textarea>
 		<p><?php _e('Add your popup test here, your can add HTML content.', 'scroll-popup'); ?></p>
+		
+		<label for="tag-title"><?php _e('Expiration date', 'scroll-popup'); ?></label>
+		<input name="sphca_date" type="text" id="sphca_date" value="<?php echo substr($form['sphca_date'],0,10); ?>" maxlength="10" />
+		<p><?php _e('Please enter the expiration date in this format YYYY-MM-DD <br /> 9999-12-31 : Is equal to no expire.', 'scroll-popup'); ?></p>
 	  
       <input name="sphca_id" id="sphca_id" type="hidden" value="<?php echo $form['sphca_id']; ?>">
       <input type="hidden" name="sphca_form_submit" value="yes"/>

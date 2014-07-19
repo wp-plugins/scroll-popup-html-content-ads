@@ -63,17 +63,19 @@ if (isset($_POST['frm_sphca_display']) && $_POST['frm_sphca_display'] == 'yes')
         <thead>
           <tr>
             <th class="check-column" scope="col" style="width:15px;"><input type="checkbox" name="sphca_group_item[]" /></th>
-			<th scope="col" style="width:180px;"><?php _e('Short code', 'scroll-popup'); ?></th>
-			<th scope="col"><?php _e('Popup content', 'scroll-popup'); ?></th>
-            <th scope="col" style="width:200px;"><?php _e('Popup window title', 'scroll-popup'); ?></th>
+			<th scope="col"><?php _e('Short code', 'scroll-popup'); ?></th>
+			<th scope="col"><?php _e('Content', 'scroll-popup'); ?></th>
+            <th scope="col"><?php _e('Title', 'scroll-popup'); ?></th>
+			<th scope="col"><?php _e('Expiration', 'scroll-popup'); ?></th>
           </tr>
         </thead>
 		<tfoot>
           <tr>
             <th class="check-column" scope="col" style="height:15px;"><input type="checkbox" name="sphca_group_item[]" /></th>
-			<th scope="col" style="width:180px;"><?php _e('Short code', 'scroll-popup'); ?></th>
-			<th scope="col"><?php _e('Popup content', 'scroll-popup'); ?></th>
-            <th scope="col" style="width:200px;"><?php _e('Popup window title', 'scroll-popup'); ?></th>
+			<th scope="col"><?php _e('Short code', 'scroll-popup'); ?></th>
+			<th scope="col"><?php _e('Content', 'scroll-popup'); ?></th>
+            <th scope="col"><?php _e('Title', 'scroll-popup'); ?></th>
+			<th scope="col"><?php _e('Expiration', 'scroll-popup'); ?></th>
           </tr>
         </tfoot>
 		<tbody>
@@ -94,6 +96,7 @@ if (isset($_POST['frm_sphca_display']) && $_POST['frm_sphca_display'] == 'yes')
 						</td>
 						<td><?php echo stripslashes($data['sphca_text']); ?></td>
 						<td><?php echo stripslashes($data['sphca_title']); ?></td>
+						<td><?php echo substr($data['sphca_date'],0,10); ?></td>
 					</tr>
 					<?php 
 					$i = $i+1; 
@@ -101,7 +104,7 @@ if (isset($_POST['frm_sphca_display']) && $_POST['frm_sphca_display'] == 'yes')
 			}
 			else
 			{
-				?><tr><td colspan="4" align="center"><?php _e('No records available.', 'scroll-popup'); ?></td></tr><?php 
+				?><tr><td colspan="5" align="center"><?php _e('No records available.', 'scroll-popup'); ?></td></tr><?php 
 			}
 			?>
 		</tbody>

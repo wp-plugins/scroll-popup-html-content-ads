@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ad
 Plugin URI: http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ads-wordpress-plugin/
 Tags: scrolling, popup, plugin
 Requires at least: 3.2
-Tested up to: 3.9
-Stable tag: 6.2
+Tested up to: 3.9.1
+Stable tag: 6.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -22,6 +22,7 @@ Check official website for live demo [http://www.gopiplus.com/work/2012/02/05/sc
 *   [About author](http://www.gopiplus.com/work/)			
 
 This Scroll popup html content ads WordPress plugin allows you to build and show a scrolling pop up using HTML div. You can locate the scrolling pop up in a corner of a web page and choose the scrolling direction (i.e., left-to-right or top-down). and we have separate content management page to manage the popup content. using this plugin we can show our ads and special information to the user. this is the unblock-able popup and tested on IE and Mozilla.
+
 **Features of this plugin**
 
 *   Simple popup plugin.
@@ -104,6 +105,10 @@ Plugin *.po file (scroll-popup.po) available in the languages folder.
 1. Tested up to 3.9
 2. Added little security feature.
 
+= 6.3 =
+
+1. Added expiration date option for popup window.
+
 == Upgrade Notice ==
 
 = 1.0 =				
@@ -147,3 +152,7 @@ Plugin *.po file (scroll-popup.po) available in the languages folder.
 
 1. Tested up to 3.9
 2. Added little security feature.
+
+= 6.3 =
+
+1. Added expiration date option for popup window.
