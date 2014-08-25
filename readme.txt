@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ad
 Plugin URI: http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ads-wordpress-plugin/
 Tags: scrolling, popup, plugin
 Requires at least: 3.2
-Tested up to: 3.9.1
-Stable tag: 6.3
+Tested up to: 4.0
+Stable tag: 6.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -34,8 +34,6 @@ This Scroll popup html content ads WordPress plugin allows you to build and show
 	
 == Installation ==
 
-**Installation Instruction & Configuration**  
-
 [See Installation Instruction and Configuration information and Demo](http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ads-wordpress-plugin/)	   
 
 == Frequently Asked Questions ==
@@ -53,7 +51,6 @@ Q. I cant find the solution for my problem?
 Q. How to change the popup window border-color/background color?	
 
 [Answer page](http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ads-wordpress-plugin/)			
-[Contact](http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ads-wordpress-plugin/)	
 
 == Screenshots ==
 
@@ -109,6 +106,10 @@ Plugin *.po file (scroll-popup.po) available in the languages folder.
 
 1. Added expiration date option for popup window.
 
+= 6.4 =
+
+1. Tested up to 4.0
+
 == Upgrade Notice ==
 
 = 1.0 =				
@@ -156,3 +157,7 @@ Plugin *.po file (scroll-popup.po) available in the languages folder.
 = 6.3 =
 
 1. Added expiration date option for popup window.
+
+= 6.4 =
+
+1. Tested up to 4.0
