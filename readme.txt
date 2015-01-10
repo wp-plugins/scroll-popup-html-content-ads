@@ -6,7 +6,7 @@ Plugin URI: http://www.gopiplus.com/work/2012/02/05/scroll-popup-html-content-ad
 Tags: scrolling, popup, plugin
 Requires at least: 3.2
 Tested up to: 4.0
-Stable tag: 6.4
+Stable tag: 6.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -110,6 +110,10 @@ Plugin *.po file (scroll-popup.po) available in the languages folder.
 
 1. Tested up to 4.0
 
+= 6.5 =
+
+1. Tested up to 4.1
+
 == Upgrade Notice ==
 
 = 1.0 =				
@@ -161,3 +165,7 @@ Plugin *.po file (scroll-popup.po) available in the languages folder.
 = 6.4 =
 
 1. Tested up to 4.0
+
+= 6.5 =
+
+1. Tested up to 4.1
